@@ -1,8 +1,6 @@
 {
   "name": "bring-it-up",
   "version": "1.0.0",
-  "description": "",
-  "author": "Andrey Kudinov",
   "license": "ISC",
   "browserslist": [
     "> 1%",
@@ -15,5 +13,8 @@
   },
   "devDependencies": {
     "vite": "^2.7.2"
-  }
+  },
+  "main": "index.js",
+  "author": "",
+  "description": ""
 }
