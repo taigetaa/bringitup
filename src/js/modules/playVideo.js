@@ -34,7 +34,6 @@ export default class videoPlayer {
             videoId: `${url}`,
         });
 
-        console.log(this.player);
         this.overlay.style.display = "flex";
     }
 
