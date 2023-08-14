@@ -7,7 +7,7 @@ export default class Form {
             success: 'Спасибо! Скоро мы с вами свяжемся',
             failure: 'Что-то пошло не так...'
         };
-        this.path = 'question.php';
+        this.path = 'https://simple-server-cumz.onrender.com/api/data';
     }
 
     clearInputs() {
@@ -80,12 +80,16 @@ export default class Form {
 
     async postData(url, data) {
         let res = await fetch(url, {
+            headers: {
+                "Content-Type": "application/json",
+              },
             method: "POST",
-            body: data,
+            body: JSON.stringify(data)
         });
 
         return await res.text();
     }
+
     init() {
         this.checkMailInpits();
         this.initMask();
@@ -104,8 +108,13 @@ export default class Form {
                 statusMessage.textContent = this.message.loading;
 
                 const formData = new FormData(form);
+                const jsonData = {};
 
-                this.postData(this.path, formData)
+                for (let [key, value] of formData.entries()) {
+                    jsonData[key] = value;
+                }
+
+                this.postData(this.path, jsonData)
                     .then(res => {
                         console.log(res);
                         statusMessage.textContent = this.message.success;
