@@ -1,5 +1,5 @@
-import videoPlayer from "./modules/playVideo";
-import mainSlider from "./modules/slider/slider-main";
+import VideoPlayer from "./modules/playVideo";
+import MainSlider from "./modules/slider/slider-main";
 import MiniSlider from "./modules/slider/slider-mini";
 import Differnce from "./modules/slider/differnce";
 import Form from "./modules/form";
@@ -7,10 +7,10 @@ import ShowInfo from "./modules/showInfo";
 import Download from "./modules/download";
 
 window.addEventListener("DOMContentLoaded", () => {
-    const slider = new mainSlider({btns: '.next', container: '.page'});
+    const slider = new MainSlider({btns: '.next', container: '.page'});
     slider.render();
 
-    const modulePageSlider = new mainSlider({container: ".moduleapp", btns: '.next'});
+    const modulePageSlider = new MainSlider({container: ".moduleapp", btns: '.next'});
     modulePageSlider.render();
 
     const showUpSlider = new MiniSlider({
@@ -40,8 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     feedSlider.init();
 
-    new videoPlayer(".showup .play", ".overlay").init();
-    new videoPlayer(".module__video-item .play", ".overlay").init();
+    new VideoPlayer(".showup .play", ".overlay").init();
+    new VideoPlayer(".module__video-item .play", ".overlay").init();
 
     new Differnce('.officerold', '.officernew', '.officer__card-item').init();
     new Form('.form').init();

@@ -1,7 +1,7 @@
 export default class Download {
     constructor(triggers) {
         this.btns = document.querySelectorAll(triggers);
-        this.path = '/public/mainbg.jpg';
+        this.path = '/mainbg.jpg';
     }
 
     downloadItem(path) {
